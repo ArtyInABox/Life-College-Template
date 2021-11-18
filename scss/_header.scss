@@ -1,0 +1,55 @@
+.menu {
+
+    nav {
+        padding: 24px;
+    }
+
+    &-title {
+
+    }
+
+    &-branding {
+
+    }
+
+    &-nav {
+    display: flex;
+    list-style: none;
+
+    }
+
+    &-hamburger { //Mobile only
+        cursor: pointer;
+        
+        > span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background-color: $hamburgerColor;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+
+.nav-item {
+    padding: 0px 5px;
+    cursor: pointer;
+    
+    &.current > a {
+        color: $primaryColor;
+        border-bottom: 4px solid $primaryColor;
+    }
+
+    .nav-link {
+    color: $navColor;
+
+        &:hover {
+            color: $primaryColor;
+        }
+
+        
+    }   
+}
