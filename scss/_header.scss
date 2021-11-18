@@ -1,21 +1,36 @@
 .menu {
 
-    nav {
-        padding: 24px;
+    // Hamburger Open Styles   
+
+    &.open {
+
+        .overlay {
+            animation: fade-in 500ms ease-in-out forwards;
+        }
+    } 
+
+    .overlay {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient($navColor, transparent);
+        animation: fade-out 500ms ease-in-out forwards;
     }
 
-    &-title {
-
+    nav {
+        padding: 1.0625rem 1.5rem;
     }
 
     &-branding {
-
+        margin: 1.03125rem 0;
     }
 
     &-nav {
     display: flex;
     list-style: none;
-
+    margin:1.03125rem 0px;
     }
 
     &-hamburger { //Mobile only
@@ -25,31 +40,53 @@
             display: block;
             width: 26px;
             height: 3px;
+            border-radius: 1.5px;
             background-color: $hamburgerColor;
+            transform-origin: 3px 2px;
+            @include easeOut;
 
             &:not(:last-child) {
                 margin-bottom: 4px;
             }
         }
+        &.open {
+
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+    
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+    
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        } 
     }
 }
 
 .nav-item {
-    padding: 0px 5px;
     cursor: pointer;
+
+    &:not(:last-child) {
+        margin-right: 32px;
+    }
     
     &.current > a {
         color: $primaryColor;
-        border-bottom: 4px solid $primaryColor;
+        border-bottom: 5px solid $primaryColor;
+        padding-bottom: 29px;
+        font-weight: 500;
     }
 
     .nav-link {
     color: $navColor;
+    @include easeOut;
 
         &:hover {
             color: $primaryColor;
-        }
-
-        
+        }   
     }   
 }
+

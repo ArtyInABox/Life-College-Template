@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>Life College : Home</title>
 </head>
@@ -16,25 +16,33 @@
                     Life College
                 </div>    
             </a>
-            <ul class="menu-nav">
-                <li class="nav-item current">
+            <ul class="menu-nav hide-for-mobile">
+                <li class="nav-item hide-for-mobile current">
                     <a href="#" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item hide-for-mobile">
                     <a href="#" class="nav-link">What We Do</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item hide-for-mobile">
                     <a href="#" class="nav-link">About Us</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item hide-for-mobile">
                     <a href="#" class="nav-link">Contact Us</a>
                 </li>
             </ul>
-            <a href="#" class="menu-hamburger">
+            <a href="#" id="btnHamburger" class="menu-hamburger hide-for-desktop">
                 <span></span>
                 <span></span>
                 <span></span>
             </a>
+
+            <div class="overlay">
+                <div class="overlay-nav">
+                    <ul class="overlay-item">
+                        <a href="#" class="overlay-link"></a>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
    
