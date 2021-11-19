@@ -1,4 +1,6 @@
 .menu {
+    z-index: 99;
+    background-color: #fff;
 
     // Hamburger Open Styles   
 
@@ -6,6 +8,11 @@
 
         .overlay {
             animation: fade-in 500ms ease-in-out forwards;
+
+            &-nav {
+                transform: translate3d(0, 0, 0);
+                animation: nav-fade-in 500ms ease-in-out forwards;
+            }
         }
     } 
 
@@ -15,8 +22,42 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: linear-gradient($navColor, transparent);
+        background-image: linear-gradient($darkPurple, transparent);
         animation: fade-out 500ms ease-in-out forwards;
+        z-index: 10000;
+
+        &-nav {
+            display: block;
+            position: relative;
+            background-color: #fff;
+            width: 80vw;
+            height: auto;
+            text-align: center;
+            padding: 10px;
+            margin: 15px auto;
+            border-radius: 5px;
+            animation: nav-fade-out 500ms ease-in-out forwards;
+            transform: translate3d(0, -100%, 0);
+            @include easeOut;
+
+            .current > a {
+                color: $primaryColor;
+            }
+        }
+
+        &-link {
+            color: $navColor;
+            cursor: pointer;
+
+            &:hover {
+                color: $primaryColor;
+                @include easeOut;
+            }
+        }
+
+        &-item {
+            padding: 10px;
+        }
     }
 
     nav {
