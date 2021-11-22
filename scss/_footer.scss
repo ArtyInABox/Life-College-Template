@@ -1,0 +1,112 @@
+.footer {
+    background-color: $darkPurple;
+    padding: 2.5rem;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+        display: grid;
+        grid-template-columns: 2fr, repeat(2, 1fr) 2fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "branding col1 col2 n"
+        "social col1 col2 copyright";
+    }
+
+    &-branding {
+        display: inline-block;
+        color: $defaultColor;
+        font-size: $font-med;
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: branding;
+            text-align: start;
+        }
+    }
+
+    &-social {
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: social;
+            text-align: start;
+            align-self: end;
+        }
+
+        a {
+            color: #fff;
+            margin-right: 0.875rem;
+            @include breakpoint-down(medium) {
+                margin: 1rem;
+            }
+
+            &:hover {
+                color: $secondaryColor;
+                @include easeOut();
+            }
+        }
+    }
+
+    &-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 2.25;
+
+        &.col1 {
+
+            @include breakpoint-up(large) {
+                grid-area: col1;
+                align-items: start;
+            }
+
+            a {
+                color: #fff;
+                font-size: $font-sm;   
+                
+                &:hover {
+                    color: $secondaryColor;
+                    @include easeOut();
+                }
+            }
+        }
+
+        &.col2 {
+            @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+            @include breakpoint-up(large) {
+                grid-area: col2;
+                align-items: start;
+            }
+
+            a {
+                color: #fff;
+                font-size: $font-sm;   
+                
+                &:hover {
+                    color: $secondaryColor;
+                    @include easeOut();
+                }
+            }
+        }
+    }
+
+    &-copyright {
+
+        @include breakpoint-up(large) {
+            grid-area: copyright;
+            text-align: end;
+            align-self: end;
+        }
+
+        color: #fff;
+        font-size: $font-med;
+    }
+}

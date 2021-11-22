@@ -1,5 +1,10 @@
 $slides : 6;
 
+.carousel {
+  min-height: 500px;
+  height: 50vh;
+}
+
 .slider-wrapper {
     position: absolute;
     top: 90px;
