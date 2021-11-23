@@ -1,0 +1,25 @@
+.happiness {
+
+    &-intro {
+        text-align: center;
+
+        h2 {
+            text-align: start;
+        }
+
+        p {
+            padding: 1rem  0;
+            text-align: start;
+        }
+        @include breakpoint-down(medium) {
+            h2 {
+                text-align: center;
+            }
+    
+            p {
+                padding: 1rem  0;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.whatwedo {
+    background-image: url('img/kisspng-happiness-business-royalty-free-happy-holi-5ab9485d5d9267.9059328215220921253833.png');background-color: $carouselBackground;
+    
+    display: grid;
+    align-items: baseline;
+
+    @include breakpoint-up(large) {
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: repeat(2, 3fr);
+    padding: 1rem;    
+    }
+
+    @include breakpoint-down(medium) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 3fr);  
+    padding: 0.5rem;  
+    }
+    
+
+
+    &-card {
+        background-color: #fff;
+        text-align: center;
+        border-radius: 10px;  
+        order: 2;
+
+        @include breakpoint-down(medium) {
+            margin: 0.5rem;  
+        }
+
+        @include breakpoint-up(large) {
+            margin: 1rem;  
+        }
+    }    
+
+    &-content {
+
+        h2 {
+            text-align: start;
+        }
+
+        p {
+            text-align: start;
+        }
+        @include breakpoint-down(medium) {
+            h2 {
+                text-align: center;
+            }
+        
+            p {
+                padding: 1rem  0;
+                text-align: center;
+            }
+        }    
+    }
+}

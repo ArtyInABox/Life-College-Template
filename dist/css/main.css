@@ -45,11 +45,66 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
+.text-primary {
+  color: #850096;
+}
+
+.text-secondary {
+  color: #16B202;
+}
+
+.container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+
+.container--all {
+  padding-top: 2.25rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2.25rem;
+  padding-left: 1.5rem;
+}
+
+.container--py {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.container--px {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.container--pr {
+  padding-right: 1.5rem;
+}
+
+.container--pl {
+  padding-left: 1.5rem;
+}
+
+.container--pt {
+  padding-top: 2.25rem;
+}
+
+.container--pb {
+  padding-bottom: 2.25rem;
+}
+
 button, .button {
   padding: 0.875rem 2.1875rem;
-  border-radius: 50%;
-  cursor: pointer;
-  font-weight: 400;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background: #850096;
+  margin-left: 16px;
+  color: #fff;
+}
+
+button:hover, .button:hover {
+  background: #16B202;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 63.9375em) {
@@ -543,7 +598,20 @@ button, .button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  line-height: 2.25;
+}
+
+@media (max-width: 63.9375em) {
+  .footer-links {
+    line-height: 2.25;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer-links {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media (min-width: 64em) {
@@ -607,7 +675,94 @@ button, .button {
   }
 }
 
-.happiness {
-  width: 100%;
-  height: 700px;
+.happiness-intro {
+  text-align: center;
+}
+
+.happiness-intro h2 {
+  text-align: start;
+}
+
+.happiness-intro p {
+  padding: 1rem  0;
+  text-align: start;
+}
+
+@media (max-width: 63.9375em) {
+  .happiness-intro h2 {
+    text-align: center;
+  }
+  .happiness-intro p {
+    padding: 1rem  0;
+    text-align: center;
+  }
+}
+
+.whatwedo {
+  background-image: url("img/kisspng-happiness-business-royalty-free-happy-holi-5ab9485d5d9267.9059328215220921253833.png");
+  background-color: #E3E3E3;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+@media (min-width: 64em) {
+  .whatwedo {
+    -ms-grid-columns: (3fr)[2];
+        grid-template-columns: repeat(2, 3fr);
+    -ms-grid-rows: (3fr)[2];
+        grid-template-rows: repeat(2, 3fr);
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .whatwedo {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (3fr)[4];
+        grid-template-rows: repeat(4, 3fr);
+    padding: 0.5rem;
+  }
+}
+
+.whatwedo-card {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media (max-width: 63.9375em) {
+  .whatwedo-card {
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .whatwedo-card {
+    margin: 1rem;
+  }
+}
+
+.whatwedo-content h2 {
+  text-align: start;
+}
+
+.whatwedo-content p {
+  text-align: start;
+}
+
+@media (max-width: 63.9375em) {
+  .whatwedo-content h2 {
+    text-align: center;
+  }
+  .whatwedo-content p {
+    padding: 1rem  0;
+    text-align: center;
+  }
 }
