@@ -1,6 +1,5 @@
 .whatwedo {
-    background-image: url('img/kisspng-happiness-business-royalty-free-happy-holi-5ab9485d5d9267.9059328215220921253833.png');background-color: $carouselBackground;
-    
+    background-color: $carouselBackground;
     display: grid;
     align-items: baseline;
 
@@ -21,8 +20,7 @@
     &-card {
         background-color: #fff;
         text-align: center;
-        border-radius: 10px;  
-        order: 2;
+        border-radius: 10px;
 
         @include breakpoint-down(medium) {
             margin: 0.5rem;  
@@ -52,5 +50,129 @@
                 text-align: center;
             }
         }    
+    }
+}
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &-content {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+        animation-name: modalopen;
+        animation-duration: 1s;
+
+
+        @include breakpoint-up(large) {
+            width: 80%;
+            margin: 20% auto;
+
+            p {
+                text-align: start;
+            }
+        }
+
+        @include breakpoint-down(medium) {
+            width: 90%;
+            margin: 10% auto;
+        }
+    }
+
+    .item1 {
+        grid-area: para1;
+    }
+    .item2 {
+        grid-area: para2;
+    }
+    .item3 {
+        grid-area: para3;
+    }
+    .item4 {
+        grid-area: img;
+    }
+    .item5 {
+        grid-area: para4;
+    }
+
+    &-body {
+        padding: 1rem;
+        align-self: start;
+
+        img {
+            width: 100%;
+            max-width: 21.875rem;
+            height: auto;
+        }
+        
+        /*@include breakpoint-up(large) {
+            display: grid;
+            align-self: start;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 3fr);
+            grid-template-areas: 
+            "para1 para2 para3"
+            "img para4 para3";
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+        }*/
+
+        @include breakpoint-up(large) {
+            display: grid;
+            align-self: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: 
+            "para1 para2"
+            "para3 para3"
+            "img para4";
+            grid-column-gap: 2rem;
+        }
+        @include breakpoint-down(medium) {
+            text-align: center;
+
+            &-card {
+                margin: 4rem 0;
+            }
+            /*grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr auto);
+            grid-template-areas: 
+            "para1"
+            "para2"
+            "para3"
+            "img"
+            "para4";*/
+        }
+    }
+
+    @include breakpoint-down(medium) {
+
+        &-card {
+            padding: 0.3rem 0;
+        }
+    }
+
+    &-exit {
+        position: relative;
+        top: -2.0625rem;
+        color: $darkPurple;
+        float: right;
+        font-size: 30px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            color: $primaryColor;
+            @include easeOut();
+        }
     }
 }
