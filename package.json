@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://ArtyInABox.github.io/Life-College-Template/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,7 @@
   "bugs": {
     "url": "https://github.com/ArtyInABox/Life-College-Template/issues"
   },
-  "homepage": "https://github.com/ArtyInABox/Life-College-Template#readme"
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
