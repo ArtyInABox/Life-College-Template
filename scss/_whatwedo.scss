@@ -1,7 +1,7 @@
 .whatwedo {
     background-color: $carouselBackground;
     display: grid;
-    align-items: baseline;
+    align-items: center;
 
     @include breakpoint-up(large) {
     grid-template-columns: repeat(2, 3fr);
@@ -100,6 +100,7 @@
     }
     .item4 {
         grid-area: img;
+        align-self: center;
     }
     .item5 {
         grid-area: para4;
@@ -129,17 +130,151 @@
 
         @include breakpoint-up(large) {
             display: grid;
-            align-self: center;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
             grid-template-areas: 
-            "para1 para2"
-            "para3 para3"
-            "img para4";
+            "para1 para1 para2"
+            "para3 para3 para3"
+            "img para4 para4";
             grid-column-gap: 2rem;
         }
         @include breakpoint-down(medium) {
             text-align: center;
+            align-items: center;
+
+            &-card {
+                margin: 4rem 0;
+            }
+            /*grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr auto);
+            grid-template-areas: 
+            "para1"
+            "para2"
+            "para3"
+            "img"
+            "para4";*/
+        }
+    }
+
+    @include breakpoint-down(medium) {
+
+        &-card {
+            padding: 0.3rem 0;
+        }
+    }
+
+    &-exit {
+        position: relative;
+        top: -2.0625rem;
+        color: $darkPurple;
+        float: right;
+        font-size: 30px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            color: $primaryColor;
+            @include easeOut();
+        }
+    }
+}
+.modal1 {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &-content {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+        animation-name: modalopen;
+        animation-duration: 1s;
+
+
+        @include breakpoint-up(large) {
+            width: 80%;
+            margin: 20% auto;
+
+            p {
+                text-align: start;
+            }
+        }
+
+        @include breakpoint-down(medium) {
+            width: 90%;
+            margin: 10% auto;
+        }
+    }
+
+    .item1 {
+        grid-area: para1;
+    }
+    .item2 {
+        grid-area: para2;
+    }
+    .item3 {
+        grid-area: para3;
+    }
+    .item4 {
+        grid-area: para4;
+    }
+    .item5 {
+        grid-area: para5;
+    }
+    .item6 {
+        grid-area: para6;
+    }
+    .item7 {
+        grid-area: para7;
+
+        .text-primary {
+            font-size: 0.875rem;
+        }
+    }
+
+    &-body {
+        padding: 1rem;
+        align-self: start;
+
+        img {
+            width: 100%;
+            max-width: 21.875rem;
+            height: auto;
+        }
+        
+        /*@include breakpoint-up(large) {
+            display: grid;
+            align-self: start;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 3fr);
+            grid-template-areas: 
+            "para1 para2 para3"
+            "img para4 para3";
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+        }*/
+
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas: 
+            "para1 para1 para2 para2"
+            "para4 para4 para3 para3"
+            "para6 para6 para5 para5"
+            "para7 para7 para7 para7";
+            grid-column-gap: 2rem;
+        }
+        @include breakpoint-down(medium) {
+            text-align: center;
+            align-items: center;
 
             &-card {
                 margin: 4rem 0;

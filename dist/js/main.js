@@ -39,5 +39,32 @@ function clickOutside(e) {
     }
 }
 
+// Modal1
+var modal1 = document.getElementById('contentModal1');
+// Modal1 Button
+var modalBtn1 = document.getElementById('modalBtn1');
+// Modal1 Close Buttons
+var closeBtn1 = document.getElementsByClassName('modal1-exit')[0];
+var exitBtn1 = document.getElementById('exitBtn1');
+
+modalBtn1.addEventListener('click', openModal);
+closeBtn1.addEventListener('click', closeModal);
+exitBtn1.addEventListener('click', closeModal);
+window.addEventListener('click', clickOutside);
+
+function openModal() {
+    modal1.style.display = 'block';
+}
+
+function closeModal() {
+    modal1.style.display = 'none';
+}
+
+function clickOutside(e) {
+    if (e.target == modal) {
+        modal1.style.display = 'none';    
+    }
+}
+
 
 

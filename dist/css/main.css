@@ -17,8 +17,15 @@ body {
   line-height: 1.3;
 }
 
-a, a:visited, a:hover {
+a, a:visited {
   text-decoration: none;
+  color: #1C0E1E;
+}
+
+a:hover, a:visited:hover {
+  color: #850096;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .flex {
@@ -99,6 +106,7 @@ button, .button {
   background: #850096;
   margin-left: 16px;
   color: #fff;
+  cursor: pointer;
 }
 
 button:hover, .button:hover {
@@ -720,9 +728,9 @@ button:hover, .button:hover {
   background-color: #E3E3E3;
   display: -ms-grid;
   display: grid;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 64em) {
@@ -837,6 +845,9 @@ button:hover, .button:hover {
 
 .modal .item4 {
   grid-area: img;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .modal .item5 {
@@ -871,13 +882,11 @@ button:hover, .button:hover {
   .modal-body {
     display: -ms-grid;
     display: grid;
-    -ms-grid-row-align: center;
-        align-self: center;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: (1fr)[3];
         grid-template-rows: repeat(3, 1fr);
-        grid-template-areas: "para1 para2" "para3 para3" "img para4";
+        grid-template-areas: "para1 para1 para2" "para3 para3 para3" "img para4 para4";
     grid-column-gap: 2rem;
   }
 }
@@ -885,6 +894,9 @@ button:hover, .button:hover {
 @media (max-width: 63.9375em) {
   .modal-body {
     text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     /*grid-template-columns: 1fr;
             grid-template-rows: repeat(3, 1fr auto);
             grid-template-areas: 
@@ -915,6 +927,158 @@ button:hover, .button:hover {
 }
 
 .modal-exit:hover, .modal-exit:focus {
+  color: #850096;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal1 {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal1-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  -webkit-animation-name: modalopen;
+          animation-name: modalopen;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@media (min-width: 64em) {
+  .modal1-content {
+    width: 80%;
+    margin: 20% auto;
+  }
+  .modal1-content p {
+    text-align: start;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .modal1-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+}
+
+.modal1 .item1 {
+  grid-area: para1;
+}
+
+.modal1 .item2 {
+  grid-area: para2;
+}
+
+.modal1 .item3 {
+  grid-area: para3;
+}
+
+.modal1 .item4 {
+  grid-area: para4;
+}
+
+.modal1 .item5 {
+  grid-area: para5;
+}
+
+.modal1 .item6 {
+  grid-area: para6;
+}
+
+.modal1 .item7 {
+  grid-area: para7;
+}
+
+.modal1 .item7 .text-primary {
+  font-size: 0.875rem;
+}
+
+.modal1-body {
+  padding: 1rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  /*@include breakpoint-up(large) {
+            display: grid;
+            align-self: start;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 3fr);
+            grid-template-areas: 
+            "para1 para2 para3"
+            "img para4 para3";
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+        }*/
+}
+
+.modal1-body img {
+  width: 100%;
+  max-width: 21.875rem;
+  height: auto;
+}
+
+@media (min-width: 64em) {
+  .modal1-body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "para1 para1 para2 para2" "para4 para4 para3 para3" "para6 para6 para5 para5" "para7 para7 para7 para7";
+    grid-column-gap: 2rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .modal1-body {
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /*grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr auto);
+            grid-template-areas: 
+            "para1"
+            "para2"
+            "para3"
+            "img"
+            "para4";*/
+  }
+  .modal1-body-card {
+    margin: 4rem 0;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .modal1-card {
+    padding: 0.3rem 0;
+  }
+}
+
+.modal1-exit {
+  position: relative;
+  top: -2.0625rem;
+  color: #1C0E1E;
+  float: right;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal1-exit:hover, .modal1-exit:focus {
   color: #850096;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;

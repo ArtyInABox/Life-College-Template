@@ -1,0 +1,19 @@
+{
+  "name": "life-college-site-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtyInABox/Life-College-Template.git"
+  },
+  "author": "Charlie Pope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArtyInABox/Life-College-Template/issues"
+  },
+  "homepage": "https://github.com/ArtyInABox/Life-College-Template#readme"
+}
