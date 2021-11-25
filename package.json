@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://ArtyInABox.github.io/Life-College-Template",
+  "homepage": "https://ArtyInABox.github.io/Life-College-Template/index.html",
   "scripts": {
     "deploy": "gh-pages -d dist/"
   },
