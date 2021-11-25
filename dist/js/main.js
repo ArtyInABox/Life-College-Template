@@ -37,33 +37,30 @@ function clickOutside(e) {
     if (e.target == modal) {
         modal.style.display = 'none';    
     }
+    if (e.target == modal1) {
+        modal1.style.display = 'none';    
+    }
 }
 
 // Modal1
 var modal1 = document.getElementById('contentModal1');
 // Modal1 Button
-var modalBtn1 = document.getElementById('modalBtn1');
+var modalBtn1 = document.getElementById('modal1Btn');
 // Modal1 Close Buttons
 var closeBtn1 = document.getElementsByClassName('modal1-exit')[0];
 var exitBtn1 = document.getElementById('exitBtn1');
 
-modalBtn1.addEventListener('click', openModal);
-closeBtn1.addEventListener('click', closeModal);
-exitBtn1.addEventListener('click', closeModal);
-window.addEventListener('click', clickOutside);
+modalBtn1.addEventListener('click', openModal1);
+closeBtn1.addEventListener('click', closeModal1);
+exitBtn1.addEventListener('click', closeModal1);
+//window.addEventListener('click', clickOutside1);
 
-function openModal() {
+function openModal1() {
     modal1.style.display = 'block';
 }
 
-function closeModal() {
+function closeModal1() {
     modal1.style.display = 'none';
-}
-
-function clickOutside(e) {
-    if (e.target == modal) {
-        modal1.style.display = 'none';    
-    }
 }
 
 

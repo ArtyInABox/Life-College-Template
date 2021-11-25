@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://ArtyInABox.github.io/Life-College-Template/",
+  "homepage": "https://ArtyInABox.github.io/Life-College-Template",
   "scripts": {
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist/"
   },
   "repository": {
     "type": "git",
