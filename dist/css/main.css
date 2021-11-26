@@ -803,6 +803,7 @@ button:hover, .button:hover {
 
 .modal-content {
   background-color: #fff;
+  max-width: 75rem;
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
