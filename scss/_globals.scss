@@ -20,12 +20,6 @@ body {
 
 a, a:visited {
     text-decoration: none;
-    color: $darkPurple;
-
-    &:hover {
-        color: $primaryColor;
-        @include easeOut();
-    }
 }
 
 // Flex Styles

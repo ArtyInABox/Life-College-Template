@@ -1,3 +1,72 @@
 .about {
     background-color: $defaultColor;
+
+    &-header {
+        text-align: center;
+    }
+
+    #aboutHeader {
+        text-align: center;
+    }
+
+    &-instructors {
+        display: flex;
+
+        @include breakpoint-down(medium) {
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: solid 2px $primaryColor;
+        }
+    }
+
+    &-ian {
+        background-color: #fff;
+        border-radius: 1rem;
+        margin: 0 0.5rem;
+        border: 1px solid $secondaryColor;
+
+        .ian-text {
+            padding: 1.5rem;
+        }
+
+        @include breakpoint-down(medium) {
+            margin: 1rem 0;
+        }
+    }
+
+    &-pipper {
+        background-color: #fff;
+        border-radius: 1rem;
+        margin: 0 0.5rem;
+        border: 1px solid $secondaryColor;
+
+        .pipper-text {
+            padding: 1.5rem;
+        }
+
+        @include breakpoint-down(medium) {
+            margin: 1rem 0;
+        }
+    }
+
+    &-footer {
+        
+
+        h2 {
+            text-align: center;
+        }
+    }
 }

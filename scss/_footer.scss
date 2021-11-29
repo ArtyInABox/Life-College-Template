@@ -8,7 +8,7 @@
         grid-template-columns: 2fr, repeat(2, 1fr) 2fr;
         grid-template-rows: repeat(2, 1fr);
         grid-template-areas: 
-        "branding col1 col2 n"
+        "branding col1 col2 subscribe"
         "social col1 col2 copyright";
     }
 
@@ -115,5 +115,20 @@
 
         color: #fff;
         font-size: $font-med;
+    }
+
+    &-subscribe {
+        padding-bottom: 2rem;
+
+        a {
+            margin: 0;
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: subscribe;
+            align-self: end;
+            text-align: end;
+            padding-bottom: 0.5rem;    
+        }
     }
 }

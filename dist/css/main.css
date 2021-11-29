@@ -19,13 +19,6 @@ body {
 
 a, a:visited {
   text-decoration: none;
-  color: #1C0E1E;
-}
-
-a:hover, a:visited:hover {
-  color: #850096;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
 }
 
 .flex {
@@ -246,6 +239,10 @@ button:hover, .button:hover {
 
 .menu .overlay-item {
   padding: 10px;
+}
+
+.menu .overlay .button {
+  margin: 0;
 }
 
 .menu nav {
@@ -557,13 +554,13 @@ button:hover, .button:hover {
         grid-template-columns: 2fr, repeat(2, 1fr) 2fr;
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: "branding col1 col2 n" "social col1 col2 copyright";
+        grid-template-areas: "branding col1 col2 subscribe" "social col1 col2 copyright";
   }
 }
 
 .footer-branding {
   display: inline-block;
-  color: #E0E0E0;
+  color: #f7f7f7;
   font-size: 1.125rem;
 }
 
@@ -701,6 +698,25 @@ button:hover, .button:hover {
   }
 }
 
+.footer-subscribe {
+  padding-bottom: 2rem;
+}
+
+.footer-subscribe a {
+  margin: 0;
+}
+
+@media (min-width: 64em) {
+  .footer-subscribe {
+    grid-area: subscribe;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    text-align: end;
+    padding-bottom: 0.5rem;
+  }
+}
+
 .happiness-intro {
   text-align: center;
 }
@@ -725,7 +741,7 @@ button:hover, .button:hover {
 }
 
 .whatwedo {
-  background-color: #E3E3E3;
+  background-color: #f1f1f1;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -1086,5 +1102,78 @@ button:hover, .button:hover {
 }
 
 .about {
-  background-color: #E0E0E0;
+  background-color: #f7f7f7;
+}
+
+.about-header {
+  text-align: center;
+}
+
+.about #aboutHeader {
+  text-align: center;
+}
+
+.about-instructors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 63.9375em) {
+  .about-instructors {
+    display: block;
+  }
+}
+
+.about-instructors h2 {
+  text-align: center;
+}
+
+.about-instructors img {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: solid 2px #850096;
+}
+
+.about-ian {
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+  border: 1px solid #16B202;
+}
+
+.about-ian .ian-text {
+  padding: 1.5rem;
+}
+
+@media (max-width: 63.9375em) {
+  .about-ian {
+    margin: 1rem 0;
+  }
+}
+
+.about-pipper {
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+  border: 1px solid #16B202;
+}
+
+.about-pipper .pipper-text {
+  padding: 1.5rem;
+}
+
+@media (max-width: 63.9375em) {
+  .about-pipper {
+    margin: 1rem 0;
+  }
+}
+
+.about-footer h2 {
+  text-align: center;
 }
